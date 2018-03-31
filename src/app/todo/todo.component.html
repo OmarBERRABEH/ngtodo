@@ -1,0 +1,14 @@
+<li [ngClass]="{'completed': todo.status === 'completed', 'editing': isEditing}">
+  <div class="view">
+    <input type="checkbox" class="toggle" 
+          (change)="changed($event.target.checked)" 
+          [checked]="todo.status === 'completed'"  
+          autocomplete="false"/>
+    <label (dblclick)="activeEdit()">{{todo.name}}</label>
+    <button class="destroy" (click)="remove()"></button>
+  </div>
+  <form [formGroup]="todoAddForm" (submit)="editTodo()">
+    <input type="text"  formControlName="name" class="edit">
+  </form>
+
+</li>

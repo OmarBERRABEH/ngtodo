@@ -1,0 +1,7 @@
+<footer id="footer" class="footer">
+    <span class="todo-count">
+      <strong>{{(todos$ | async).length}}</strong>
+    </span>
+    <app-todo-filter></app-todo-filter>
+    <button class="clear-completed"   id="clear-completed" (click)="removeAll()">Clear completed</button>
+</footer>

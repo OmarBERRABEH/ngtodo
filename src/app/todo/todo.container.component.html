@@ -1,0 +1,16 @@
+
+    <section class="todoapp" id="todoapp">
+        <header id="header">
+            <h1>todos</h1>
+           <app-todo-form></app-todo-form>
+          </header>
+          <section id="main" class="main">
+            <div [hidden]="!(todos$| async).length">
+              <input id="toggle-all" class="toggle-all" type="checkbox" (change)="toggleStatusAll($event.target.checked)"/>
+              <label for="toggle-all">Mark all as complete</label>
+            </div>
+            <app-todo-list></app-todo-list>
+          </section>
+        <app-todo-footer></app-todo-footer>
+    </section>
+  
